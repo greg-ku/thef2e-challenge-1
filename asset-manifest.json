@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/thef2e-challenge-1/static/css/main.2cce8147.chunk.css",
+    "main.js": "/thef2e-challenge-1/static/js/main.abc10001.chunk.js",
+    "main.js.map": "/thef2e-challenge-1/static/js/main.abc10001.chunk.js.map",
+    "runtime~main.js": "/thef2e-challenge-1/static/js/runtime~main.acf08efb.js",
+    "runtime~main.js.map": "/thef2e-challenge-1/static/js/runtime~main.acf08efb.js.map",
+    "static/js/2.b41502e9.chunk.js": "/thef2e-challenge-1/static/js/2.b41502e9.chunk.js",
+    "static/js/2.b41502e9.chunk.js.map": "/thef2e-challenge-1/static/js/2.b41502e9.chunk.js.map",
+    "index.html": "/thef2e-challenge-1/index.html",
+    "precache-manifest.e37ab6fdcfa7f47f6397332dbe664947.js": "/thef2e-challenge-1/precache-manifest.e37ab6fdcfa7f47f6397332dbe664947.js",
+    "service-worker.js": "/thef2e-challenge-1/service-worker.js",
+    "static/css/main.2cce8147.chunk.css.map": "/thef2e-challenge-1/static/css/main.2cce8147.chunk.css.map",
+    "static/media/logo.svg": "/thef2e-challenge-1/static/media/logo.5d5d9eef.svg"
+  }
+}
