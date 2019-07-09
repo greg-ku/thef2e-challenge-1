@@ -3,6 +3,7 @@ import styled from 'styled-components'
 import 'material-icons/iconfont/material-icons.css'
 import 'material-icons/css/material-icons.min.css'
 
+import GlobalStyle from './global-styles'
 import MainPage from './MainPage'
 import SideBar from './SideBar'
 
@@ -18,13 +19,23 @@ const Page = styled.div`
 `
 
 function App() {
+  const todos = [
+    { pomodoro: 0, title: 'THE FIRST THING TO DO TODAY', done: false },
+    { pomodoro: 0, title: 'THE SECOND THING TO DO TODAY', done: false },
+    { pomodoro: 0, title: 'THE THIRD THING TO DO TODAY', done: false },
+    { pomodoro: 0, title: 'THE FOURTH THING TO DO TODAY', done: false },
+  ]
+
   return (
-    <MainWrapper>
-      <Page>
-        <MainPage/>
-      </Page>
-      <SideBar/>
-    </MainWrapper>
+    <span>
+      <GlobalStyle/>
+      <MainWrapper>
+        <Page>
+          <MainPage todos={todos}/>
+        </Page>
+        <SideBar/>
+      </MainWrapper>
+    </span>
   )
 }
 

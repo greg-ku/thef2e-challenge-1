@@ -57,7 +57,7 @@ const Player = props => {
     <Progress>
       <Circle>
         <Play>
-          <PlayIcon icon="mi-play-circle-filled"/>
+          <PlayIcon icon="play_circle_filled"/>
           <Stop/>
         </Play>
       </Circle>

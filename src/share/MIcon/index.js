@@ -3,15 +3,15 @@ import styled from 'styled-components'
 
 const I = styled.i`
   font-size: ${props => props.size ? `${props.size}px` : '24px'};
-  color: ${props => props.color ? props.color : 'initial'}
+  color: ${props => props.color ? props.color : 'inherit'}
 `
 
 const MIcon = props => (
   <I
-    className={`mi ${props.icon} ${props.className ? props.className : ''}`}
+    className={`material-icons ${props.className ? props.className : ''}`}
     size={props.size}
     color={props.color}
-  />
+  >{props.icon}</I>
 )
 
 export default MIcon

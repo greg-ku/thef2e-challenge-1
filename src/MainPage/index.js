@@ -1,8 +1,11 @@
 import React from 'react'
 import styled from 'styled-components'
 
-import { blue } from './../global-styles'
+import MIcon from './../share/MIcon'
+import { blue, pink } from './../global-styles'
 import Player from './Player'
+import AddInput from './../share/AddInput'
+import TodoList from './../share/TodoList'
 
 const Wrapper = styled.div`
   display: flex;
@@ -13,6 +16,8 @@ const Wrapper = styled.div`
 const LeftHalf = styled.div`
   flex-grow: 1;
   min-width: 560px;
+  padding-left: 85px;
+  box-sizing: border-box;
 `
 
 const RightHalf = styled.div`
@@ -35,10 +40,36 @@ const HalfBackground = styled.div`
   background-color: ${blue};
 `
 
-const MainPage = props => {
+const Row = styled.div`
+  width: 445px;
+  display: flex;
+  flex-direction: column;
+  padding: 48px 0;
+  height: 100%;
+  box-sizing: border-box;
+`
+
+const GrowCol = styled.div`
+  flex-grow: 1;
+`
+
+const MainPage = ({ todos = [] }) => {
+  const [firstTodo, ...otherTodos] = todos
+
   return (
     <Wrapper>
-      <LeftHalf/>
+      <LeftHalf>
+        <Row>
+          <div>
+            <AddInput/>
+          </div>
+          <GrowCol>
+          </GrowCol>
+          <div>
+            <TodoList todos={otherTodos} maxDispalyLength={3}/>
+          </div>
+        </Row>
+      </LeftHalf>
       <RightHalf>
         <VCentering>
           <Player/>

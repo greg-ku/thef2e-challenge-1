@@ -49,17 +49,17 @@ const SideBar = props => {
       <Navs>
         <Col>
           <Nav>
-            <MIcon icon="mi-list" size={36} color="white"/>
+            <MIcon icon="list" size={36} color="white"/>
           </Nav>
         </Col>
         <Col>
           <Nav>
-            <MIcon icon="mi-poll" size={36} color="white"/>
+            <MIcon icon="poll" size={36} color="white"/>
           </Nav>
         </Col>
         <Col>
           <Nav>
-            <MIcon icon="mi-library-music" size={36} color="white"/>
+            <MIcon icon="library_music" size={36} color="white"/>
           </Nav>
         </Col>
       </Navs>
