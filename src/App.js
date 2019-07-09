@@ -1,26 +1,31 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from 'react'
+import styled from 'styled-components'
+import 'material-icons/iconfont/material-icons.css'
+import 'material-icons/css/material-icons.min.css'
+
+import MainPage from './MainPage'
+import SideBar from './SideBar'
+
+const MainWrapper = styled.div`
+  display: flex;
+  min-width: 1280px;
+  height: 100vh;
+  min-height: 800px;
+`
+
+const Page = styled.div`
+  flex-grow: 1;
+`
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <MainWrapper>
+      <Page>
+        <MainPage/>
+      </Page>
+      <SideBar/>
+    </MainWrapper>
+  )
 }
 
-export default App;
+export default App
