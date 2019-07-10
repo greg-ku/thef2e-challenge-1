@@ -31,6 +31,8 @@ const Add = styled.button`
   border: 0;
   padding: 16px;
   line-height: 0.5;
+  cursor: pointer;
+  outline: 0;
 `
 
 const AddInput = props => {

@@ -38,9 +38,9 @@ const TodoList = ({ todos = [], maxDispalyLength = 0 }) => {
       {
         displayedTodos.map((todo, index) => (
           <TodoWrapper key={`todo-${index}`}>
-            <div><MIcon icon="panorama_fish_eye"/></div>
+            <div><MIcon icon="panorama_fish_eye" clickable/></div>
             <TitleCol>{todo.title}</TitleCol>
-            <div><MIcon icon="play_circle_outline"/></div>
+            <div><MIcon icon="play_circle_outline" clickable/></div>
           </TodoWrapper>
         ))
       }

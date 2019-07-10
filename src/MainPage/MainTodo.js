@@ -59,7 +59,7 @@ const MainTodo = ({ todo }) => {
   return (
     <Div>
       <MainTodoRow>
-        <MIcon icon="panorama_fish_eye" size={48}/>
+        <MIcon icon="panorama_fish_eye" size={48} clickable/>
         <MainTodoCol>
           <MainTitle>{todo.title}</MainTitle>
           <StatusBar>
