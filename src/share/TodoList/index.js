@@ -17,6 +17,9 @@ const TitleCol = styled.div`
   padding: 0 4px;
   box-sizing: border-box;
   font-weight: 600;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
 `
 
 const More = styled.a`
