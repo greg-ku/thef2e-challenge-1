@@ -2,10 +2,11 @@ import React from 'react'
 import styled from 'styled-components'
 
 import MIcon from './../share/MIcon'
-import { blue, pink } from './../global-styles'
-import Player from './Player'
 import AddInput from './../share/AddInput'
 import TodoList from './../share/TodoList'
+import { blue, pink } from './../global-styles'
+import Player from './Player'
+import MainTodo from './MainTodo'
 
 const Wrapper = styled.div`
   display: flex;
@@ -51,6 +52,8 @@ const Row = styled.div`
 
 const GrowCol = styled.div`
   flex-grow: 1;
+  display: flex;
+  align-items: center;
 `
 
 const MainPage = ({ todos = [] }) => {
@@ -64,6 +67,7 @@ const MainPage = ({ todos = [] }) => {
             <AddInput/>
           </div>
           <GrowCol>
+            {firstTodo && <MainTodo todo={firstTodo}/>}
           </GrowCol>
           <div>
             <TodoList todos={otherTodos} maxDispalyLength={3}/>

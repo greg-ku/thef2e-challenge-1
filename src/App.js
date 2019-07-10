@@ -20,7 +20,7 @@ const Page = styled.div`
 
 function App() {
   const todos = [
-    { pomodoro: 0, title: 'THE FIRST THING TO DO TODAY', done: false },
+    { pomodoro: 2, title: 'THE FIRST THING TO DO TODAY', done: false },
     { pomodoro: 0, title: 'THE SECOND THING TO DO TODAY', done: false },
     { pomodoro: 0, title: 'THE THIRD THING TO DO TODAY', done: false },
     { pomodoro: 0, title: 'THE FOURTH THING TO DO TODAY', done: false },
