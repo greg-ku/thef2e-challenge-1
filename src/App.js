@@ -1,7 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
 import 'material-icons/iconfont/material-icons.css'
-import 'material-icons/css/material-icons.min.css'
 
 import GlobalStyle from './global-styles'
 import MainPage from './MainPage'
