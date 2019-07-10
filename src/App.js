@@ -2,6 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 import 'material-icons/iconfont/material-icons.css'
 
+import { withGlobalState } from './global-state'
 import GlobalStyle from './global-styles'
 import MainPage from './MainPage'
 import SideBar from './SideBar'
@@ -18,19 +19,12 @@ const Page = styled.div`
 `
 
 function App() {
-  const todos = [
-    { pomodoro: 2, title: 'THE FIRST THING TO DO TODAY', done: false },
-    { pomodoro: 0, title: 'THE SECOND THING TO DO TODAY', done: false },
-    { pomodoro: 0, title: 'THE THIRD THING TO DO TODAY', done: false },
-    { pomodoro: 0, title: 'THE FOURTH THING TO DO TODAY', done: false },
-  ]
-
   return (
     <span>
       <GlobalStyle/>
       <MainWrapper>
         <Page>
-          <MainPage todos={todos}/>
+          <MainPage/>
         </Page>
         <SideBar/>
       </MainWrapper>
@@ -38,4 +32,4 @@ function App() {
   )
 }
 
-export default App
+export default withGlobalState(App)

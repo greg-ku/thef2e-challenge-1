@@ -1,6 +1,7 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import styled from 'styled-components'
 
+import { GlobalState } from './../global-state'
 import MIcon from './../share/MIcon'
 import AddInput from './../share/AddInput'
 import TodoList from './../share/TodoList'
@@ -56,8 +57,9 @@ const GrowCol = styled.div`
   align-items: center;
 `
 
-const MainPage = ({ todos = [] }) => {
-  const [firstTodo, ...otherTodos] = todos
+const MainPage = () => {
+  const { context, dispatch } = useContext(GlobalState)
+  const [firstTodo, ...otherTodos] = context.todos
 
   return (
     <Wrapper>

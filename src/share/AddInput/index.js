@@ -1,6 +1,7 @@
-import React from 'react'
+import React, { useContext, useState } from 'react'
 import styled from 'styled-components'
 
+import { GlobalState } from './../../global-state'
 import MIcon from './../MIcon'
 import { pink } from './../../global-styles'
 
@@ -36,12 +37,27 @@ const Add = styled.button`
 `
 
 const AddInput = props => {
+  const { context, dispatch } = useContext(GlobalState)
+
+  const [text, setText] = useState('')
+
+  function handleAddClick(todoTitle) {
+    dispatch({ type: 'ADD_TODO', payload: todoTitle })
+    setText('')
+  }
+
   return (
     <InputGroup>
       <InputWrapper>
-        <Input placeholder="ADD A NEW MISSION..."/>
+        <Input
+          placeholder="ADD A NEW MISSION..."
+          value={text}
+          onChange={e => setText(e.target.value)}
+        />
       </InputWrapper>
-      <Add><MIcon icon="add" color={pink}/></Add>
+      <Add onClick={() => handleAddClick(text)}>
+        <MIcon icon="add" color={pink}/>
+      </Add>
     </InputGroup>
   )
 }
