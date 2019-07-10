@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/thef2e-challenge-1/precache-manifest.e37ab6fdcfa7f47f6397332dbe664947.js"
+  "/thef2e-challenge-1/precache-manifest.592ca1fc70b71be4d46dc1128eba0924.js"
 );
 
 self.addEventListener('message', (event) => {
