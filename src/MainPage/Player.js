@@ -2,10 +2,10 @@ import React from 'react'
 import styled from 'styled-components'
 
 import MIcon from './../share/MIcon'
-import { pink } from './../global-styles'
+import { workTheme } from './../global-styles'
 
 const Progress = styled.div`
-  border: 4px solid ${pink};
+  border: 4px solid ${props => props.theme.primary};
   border-radius: 100%;
   background-color: transparent;
   width: 540px;
@@ -15,9 +15,10 @@ const Progress = styled.div`
   align-items: center;
   z-index: 9;
 `
+Progress.defaultProps = { theme: workTheme }
 
 const Circle = styled.div`
-  background-color: ${props => props.isRunning ? 'white' : pink};
+  background-color: ${props => props.isRunning ? 'white' : props.theme.primary};
   border-radius: 100%;
   width: 510px;
   height: 510px;
@@ -25,6 +26,7 @@ const Circle = styled.div`
   justify-content: center;
   align-items: center;
 `
+Circle.defaultProps = { theme: workTheme }
 
 const Play = styled.button`
   position: relative;
@@ -35,9 +37,10 @@ const Play = styled.button`
 
 const Icon = styled(MIcon)`
   font-size: 6rem;
-  color: ${props => props.play ? 'white' : pink};
+  color: ${props => props.play ? 'white' : props.theme.primary};
   cursor: pointer;
 `
+Icon.defaultProps = { theme: workTheme }
 
 const Stop = styled.button`
   position: absolute;
@@ -48,9 +51,10 @@ const Stop = styled.button`
   width: 12px;
   height: 12px;
   padding: 0;
-  background-color: ${props => props.isRunning ? pink : 'white'};
+  background-color: ${props => props.isRunning ? props.theme.primary : 'white'};
   cursor: pointer;
 `
+Stop.defaultProps = { theme: workTheme }
 
 const A = styled.a`
   display: inline-block;

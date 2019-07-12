@@ -4,15 +4,16 @@ import styled from 'styled-components'
 import { GlobalState } from './../global-state'
 import AddInput from './../share/AddInput'
 import TodoList from './../share/TodoList'
-import { blue } from './../global-styles'
+import { blue, workTheme } from './../global-styles'
 import Player from './Player'
 import MainTodo from './MainTodo'
 
 const Wrapper = styled.div`
   display: flex;
   height: 100%;
-  background-color: #FFEDF7;
+  background-color: ${props => props.theme.bg};
 `
+Wrapper.defaultProps = { theme: workTheme }
 
 const LeftHalf = styled.div`
   flex-grow: 1;
@@ -68,7 +69,13 @@ const MainPage = () => {
             <AddInput/>
           </div>
           <GrowCol>
-            {firstTodo && <MainTodo todo={firstTodo} time={context.player.remainingTimeMs}/>}
+            {
+              firstTodo &&
+              <MainTodo
+                todo={firstTodo}
+                time={context.player.remainingTimeMs}
+              />
+            }
           </GrowCol>
           <div>
             <TodoList todos={otherTodos} maxDispalyLength={3}/>

@@ -2,7 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 
 import MIcon from './../share/MIcon'
-import { blue, pink } from './../global-styles'
+import { blue, workTheme } from './../global-styles'
 
 const Div = styled.div`
   width: 100%;
@@ -41,14 +41,16 @@ const Circle = styled.div`
 `
 
 const Progress = styled(Circle)`
-  border: 1px solid ${pink};
+  border: 1px solid ${props => props.theme.primary};
 `
+Progress.defaultProps = { theme: workTheme }
 
 const Timer = styled.div`
   font-size: 176px;
   font-weight: 800;
-  color: ${pink};
+  color: ${props => props.theme.primary};
 `
+Timer.defaultProps = { theme: workTheme }
 
 const Pomodoro = styled(Circle)`
   background-color: ${blue};

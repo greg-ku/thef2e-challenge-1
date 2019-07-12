@@ -2,7 +2,7 @@ import React, { Fragment } from 'react'
 import styled from 'styled-components'
 
 import MIcon from './../MIcon'
-import { blue, pink } from './../../global-styles'
+import { blue, workTheme } from './../../global-styles'
 
 const TodoWrapper = styled.div`
   display: flex;
@@ -23,11 +23,12 @@ const TitleCol = styled.div`
 `
 
 const More = styled.a`
-  color: ${pink};
+  color: ${props => props.theme.primary};
   margin-top: 9px;
   float: right;
   height: 18px;
 `
+More.defaultProps = { theme: workTheme }
 
 const TodoList = ({ todos = [], maxDispalyLength = 0 }) => {
   const hasMore = maxDispalyLength > 0 && todos.length > maxDispalyLength

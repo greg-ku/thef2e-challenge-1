@@ -3,7 +3,7 @@ import styled from 'styled-components'
 
 import { GlobalState } from './../../global-state'
 import MIcon from './../MIcon'
-import { pink } from './../../global-styles'
+import { workTheme } from './../../global-styles'
 
 const InputGroup = styled.div`
   display: flex;
@@ -19,14 +19,15 @@ const Input = styled.input`
   width: 100%;
   border: 0;
   box-sizing: border-box;
-  color: ${pink};
+  color: ${props => props.theme.primary};
 
   &:: placeholder {
     font-weight: 600;
     font-style: oblique;
-    color: ${pink};
+    color: ${props => props.theme.primary};
   }
 `
+Input.defaultProps = { theme: workTheme }
 
 const Add = styled.button`
   border: 0;
@@ -34,7 +35,9 @@ const Add = styled.button`
   line-height: 0.5;
   cursor: pointer;
   outline: 0;
+  color: ${props => props.theme.primary};
 `
+Add.defaultProps = { theme: workTheme }
 
 const AddInput = props => {
   const { context, dispatch } = useContext(GlobalState)
@@ -56,7 +59,7 @@ const AddInput = props => {
         />
       </InputWrapper>
       <Add onClick={() => handleAddClick(text)}>
-        <MIcon icon="add" color={pink}/>
+        <MIcon icon="add"/>
       </Add>
     </InputGroup>
   )
