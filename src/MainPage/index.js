@@ -2,10 +2,9 @@ import React, { useContext } from 'react'
 import styled from 'styled-components'
 
 import { GlobalState } from './../global-state'
-import MIcon from './../share/MIcon'
 import AddInput from './../share/AddInput'
 import TodoList from './../share/TodoList'
-import { blue, pink } from './../global-styles'
+import { blue } from './../global-styles'
 import Player from './Player'
 import MainTodo from './MainTodo'
 
@@ -69,7 +68,7 @@ const MainPage = () => {
             <AddInput/>
           </div>
           <GrowCol>
-            {firstTodo && <MainTodo todo={firstTodo}/>}
+            {firstTodo && <MainTodo todo={firstTodo} time={context.player.remainingTimeMs}/>}
           </GrowCol>
           <div>
             <TodoList todos={otherTodos} maxDispalyLength={3}/>
@@ -78,7 +77,12 @@ const MainPage = () => {
       </LeftHalf>
       <RightHalf>
         <VCentering>
-          <Player/>
+          <Player
+            player={context.player}
+            onPlay={() => firstTodo &&  dispatch({ type: 'START', payload: new Date() })}
+            onPause={() => dispatch({ type: 'PAUSE', payload: new Date() })}
+            onStop={() => dispatch({ type: 'STOP', payload: new Date() })}
+          />
         </VCentering>
         <HalfBackground/>
       </RightHalf>

@@ -55,7 +55,7 @@ const Pomodoro = styled(Circle)`
   margin-right: 8px;
 `
 
-const MainTodo = ({ todo }) => {
+const MainTodo = ({ todo, time = 25 * 60 * 1000 }) => {
   return (
     <Div>
       <MainTodoRow>
@@ -72,7 +72,9 @@ const MainTodo = ({ todo }) => {
         </MainTodoCol>
       </MainTodoRow>
       <Timer>
-        25:00
+        {('0' + Math.floor(time / 60 / 1000)).slice(-2)}
+        :
+        {('0' + Math.floor(time / 1000 % 60)).slice(-2)}
       </Timer>
     </Div>
   )

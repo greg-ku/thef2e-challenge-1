@@ -2,7 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 
 import MIcon from './../share/MIcon'
-import { blue, pink } from './../global-styles'
+import { pink } from './../global-styles'
 
 const Progress = styled.div`
   border: 4px solid ${pink};
@@ -17,7 +17,7 @@ const Progress = styled.div`
 `
 
 const Circle = styled.div`
-  background-color: ${pink};
+  background-color: ${props => props.isRunning ? 'white' : pink};
   border-radius: 100%;
   width: 510px;
   height: 510px;
@@ -33,9 +33,9 @@ const Play = styled.button`
   background-color: transparent;
 `
 
-const PlayIcon = styled(MIcon)`
+const Icon = styled(MIcon)`
   font-size: 6rem;
-  color: white;
+  color: ${props => props.play ? 'white' : pink};
   cursor: pointer;
 `
 
@@ -48,17 +48,29 @@ const Stop = styled.button`
   width: 12px;
   height: 12px;
   padding: 0;
-  background-color: white;
+  background-color: ${props => props.isRunning ? pink : 'white'};
   cursor: pointer;
 `
 
-const Player = props => {
+const A = styled.a`
+  display: inline-block;
+`
+
+const Player = ({ player, onPlay, onPause, onStop }) => {
+  const isRunning = player.status === 'WORKING' || player.status === 'BREAKING'
   return (
     <Progress>
-      <Circle>
+      <Circle isRunning={isRunning}>
         <Play>
-          <PlayIcon icon="play_circle_filled"/>
-          <Stop/>
+          {
+            !isRunning &&
+            <A onClick={onPlay}><Icon icon="play_circle_filled" play/></A>
+          }
+          {
+            isRunning &&
+            <A onClick={onPause}><Icon icon="pause_circle_filled" pause/></A>
+          }
+          <Stop onClick={onStop} isRunning={isRunning}/>
         </Play>
       </Circle>
     </Progress>
