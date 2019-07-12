@@ -1,9 +1,8 @@
 import React, { useContext, useState } from 'react'
-import styled from 'styled-components'
+import styled, { withTheme } from 'styled-components'
 
 import { GlobalState } from './../../global-state'
 import MIcon from './../MIcon'
-import { workTheme } from './../../global-styles'
 
 const InputGroup = styled.div`
   display: flex;
@@ -27,7 +26,7 @@ const Input = styled.input`
     color: ${props => props.theme.primary};
   }
 `
-Input.defaultProps = { theme: workTheme }
+const InputWithTheme = withTheme(Input)
 
 const Add = styled.button`
   border: 0;
@@ -37,7 +36,7 @@ const Add = styled.button`
   outline: 0;
   color: ${props => props.theme.primary};
 `
-Add.defaultProps = { theme: workTheme }
+const AddWithTheme = withTheme(Add)
 
 const AddInput = props => {
   const { context, dispatch } = useContext(GlobalState)
@@ -52,15 +51,15 @@ const AddInput = props => {
   return (
     <InputGroup>
       <InputWrapper>
-        <Input
+        <InputWithTheme
           placeholder="ADD A NEW MISSION..."
           value={text}
           onChange={e => setText(e.target.value)}
         />
       </InputWrapper>
-      <Add onClick={() => handleAddClick(text)}>
+      <AddWithTheme onClick={() => handleAddClick(text)}>
         <MIcon icon="add"/>
-      </Add>
+      </AddWithTheme>
     </InputGroup>
   )
 }

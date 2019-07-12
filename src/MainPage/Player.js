@@ -1,8 +1,7 @@
 import React from 'react'
-import styled from 'styled-components'
+import styled, { withTheme } from 'styled-components'
 
 import MIcon from './../share/MIcon'
-import { workTheme } from './../global-styles'
 
 const Progress = styled.div`
   border: 4px solid ${props => props.theme.primary};
@@ -15,7 +14,7 @@ const Progress = styled.div`
   align-items: center;
   z-index: 9;
 `
-Progress.defaultProps = { theme: workTheme }
+const ProgressWithTheme = withTheme(Progress)
 
 const Circle = styled.div`
   background-color: ${props => props.isRunning ? 'white' : props.theme.primary};
@@ -26,7 +25,7 @@ const Circle = styled.div`
   justify-content: center;
   align-items: center;
 `
-Circle.defaultProps = { theme: workTheme }
+const CircleWithTheme = withTheme(Circle)
 
 const Play = styled.button`
   position: relative;
@@ -40,7 +39,7 @@ const Icon = styled(MIcon)`
   color: ${props => props.play ? 'white' : props.theme.primary};
   cursor: pointer;
 `
-Icon.defaultProps = { theme: workTheme }
+const IconWithTheme = withTheme(Icon)
 
 const Stop = styled.button`
   position: absolute;
@@ -54,7 +53,7 @@ const Stop = styled.button`
   background-color: ${props => props.isRunning ? props.theme.primary : 'white'};
   cursor: pointer;
 `
-Stop.defaultProps = { theme: workTheme }
+const StopWithTheme = withTheme(Stop)
 
 const A = styled.a`
   display: inline-block;
@@ -63,21 +62,21 @@ const A = styled.a`
 const Player = ({ player, onPlay, onPause, onStop }) => {
   const isRunning = player.status === 'WORKING' || player.status === 'BREAKING'
   return (
-    <Progress>
-      <Circle isRunning={isRunning}>
+    <ProgressWithTheme>
+      <CircleWithTheme isRunning={isRunning}>
         <Play>
           {
             !isRunning &&
-            <A onClick={onPlay}><Icon icon="play_circle_filled" play/></A>
+            <A onClick={onPlay}><IconWithTheme icon="play_circle_filled" play/></A>
           }
           {
             isRunning &&
-            <A onClick={onPause}><Icon icon="pause_circle_filled" pause/></A>
+            <A onClick={onPause}><IconWithTheme icon="pause_circle_filled" pause/></A>
           }
-          <Stop onClick={onStop} isRunning={isRunning}/>
+          <StopWithTheme onClick={onStop} isRunning={isRunning}/>
         </Play>
-      </Circle>
-    </Progress>
+      </CircleWithTheme>
+    </ProgressWithTheme>
   )
 }
 

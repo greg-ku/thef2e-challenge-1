@@ -1,9 +1,9 @@
-import React from 'react'
-import styled from 'styled-components'
+import React, { useContext } from 'react'
+import styled, { ThemeProvider } from 'styled-components'
 import 'material-icons/iconfont/material-icons.css'
 
-import { withGlobalState } from './global-state'
-import GlobalStyle from './global-styles'
+import { withGlobalState, GlobalState } from './global-state'
+import GlobalStyle, { workTheme, breakTheme } from './global-styles'
 import MainPage from './MainPage'
 import SideBar from './SideBar'
 
@@ -19,16 +19,21 @@ const Page = styled.div`
 `
 
 function App() {
+  const { context } = useContext(GlobalState)
+  const type = context.player.type
+
   return (
-    <span>
-      <GlobalStyle/>
-      <MainWrapper>
-        <Page>
-          <MainPage/>
-        </Page>
-        <SideBar/>
-      </MainWrapper>
-    </span>
+    <ThemeProvider theme={type === 'BREAK' ? breakTheme : workTheme}>
+      <span>
+        <GlobalStyle/>
+        <MainWrapper>
+          <Page>
+            <MainPage/>
+          </Page>
+          <SideBar/>
+        </MainWrapper>
+      </span>
+    </ThemeProvider>
   )
 }
 

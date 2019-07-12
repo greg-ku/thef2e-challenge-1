@@ -1,8 +1,8 @@
 import React, { Fragment } from 'react'
-import styled from 'styled-components'
+import styled, { withTheme } from 'styled-components'
 
 import MIcon from './../MIcon'
-import { blue, workTheme } from './../../global-styles'
+import { blue } from './../../global-styles'
 
 const TodoWrapper = styled.div`
   display: flex;
@@ -28,7 +28,7 @@ const More = styled.a`
   float: right;
   height: 18px;
 `
-More.defaultProps = { theme: workTheme }
+const MoreWithTheme = withTheme(More)
 
 const TodoList = ({ todos = [], maxDispalyLength = 0 }) => {
   const hasMore = maxDispalyLength > 0 && todos.length > maxDispalyLength
@@ -45,7 +45,7 @@ const TodoList = ({ todos = [], maxDispalyLength = 0 }) => {
           </TodoWrapper>
         ))
       }
-      <More>{hasMore && 'MORE'}</More>
+      <MoreWithTheme>{hasMore && 'MORE'}</MoreWithTheme>
     </Fragment>
   )
 }

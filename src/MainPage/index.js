@@ -1,10 +1,10 @@
 import React, { useContext } from 'react'
-import styled from 'styled-components'
+import styled, { withTheme } from 'styled-components'
 
 import { GlobalState } from './../global-state'
 import AddInput from './../share/AddInput'
 import TodoList from './../share/TodoList'
-import { blue, workTheme } from './../global-styles'
+import { blue } from './../global-styles'
 import Player from './Player'
 import MainTodo from './MainTodo'
 
@@ -13,7 +13,7 @@ const Wrapper = styled.div`
   height: 100%;
   background-color: ${props => props.theme.bg};
 `
-Wrapper.defaultProps = { theme: workTheme }
+const WrapperWithTheme = withTheme(Wrapper)
 
 const LeftHalf = styled.div`
   flex-grow: 1;
@@ -62,7 +62,7 @@ const MainPage = () => {
   const [firstTodo, ...otherTodos] = context.todos
 
   return (
-    <Wrapper>
+    <WrapperWithTheme>
       <LeftHalf>
         <Row>
           <div>
@@ -93,7 +93,7 @@ const MainPage = () => {
         </VCentering>
         <HalfBackground/>
       </RightHalf>
-    </Wrapper>
+    </WrapperWithTheme>
   )
 }
 

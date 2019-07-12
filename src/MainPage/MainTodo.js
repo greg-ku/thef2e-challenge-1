@@ -1,8 +1,8 @@
 import React from 'react'
-import styled from 'styled-components'
+import styled, { withTheme } from 'styled-components'
 
 import MIcon from './../share/MIcon'
-import { blue, workTheme } from './../global-styles'
+import { blue } from './../global-styles'
 
 const Div = styled.div`
   width: 100%;
@@ -43,14 +43,14 @@ const Circle = styled.div`
 const Progress = styled(Circle)`
   border: 1px solid ${props => props.theme.primary};
 `
-Progress.defaultProps = { theme: workTheme }
+const ProgressWithTheme = withTheme(Progress)
 
 const Timer = styled.div`
   font-size: 176px;
   font-weight: 800;
   color: ${props => props.theme.primary};
 `
-Timer.defaultProps = { theme: workTheme }
+const TimerWithTheme = withTheme(Timer)
 
 const Pomodoro = styled(Circle)`
   background-color: ${blue};
@@ -69,15 +69,15 @@ const MainTodo = ({ todo, time = 25 * 60 * 1000 }) => {
               todo.pomodoro > 0 &&
               Array.from(Array(todo.pomodoro)).map(() => <Pomodoro/>)
             }
-            <Progress/>
+            <ProgressWithTheme/>
           </StatusBar>
         </MainTodoCol>
       </MainTodoRow>
-      <Timer>
+      <TimerWithTheme>
         {('0' + Math.floor(time / 60 / 1000)).slice(-2)}
         :
         {('0' + Math.floor(time / 1000 % 60)).slice(-2)}
-      </Timer>
+      </TimerWithTheme>
     </Div>
   )
 }
