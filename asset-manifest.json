@@ -1,17 +1,17 @@
 {
   "files": {
     "main.css": "/thef2e-challenge-1/static/css/main.34de6062.chunk.css",
-    "main.js": "/thef2e-challenge-1/static/js/main.52e3276e.chunk.js",
-    "main.js.map": "/thef2e-challenge-1/static/js/main.52e3276e.chunk.js.map",
+    "main.js": "/thef2e-challenge-1/static/js/main.8c5c3011.chunk.js",
+    "main.js.map": "/thef2e-challenge-1/static/js/main.8c5c3011.chunk.js.map",
     "runtime~main.js": "/thef2e-challenge-1/static/js/runtime~main.acf08efb.js",
     "runtime~main.js.map": "/thef2e-challenge-1/static/js/runtime~main.acf08efb.js.map",
-    "static/css/2.dcc96cc3.chunk.css": "/thef2e-challenge-1/static/css/2.dcc96cc3.chunk.css",
-    "static/js/2.5c8d8268.chunk.js": "/thef2e-challenge-1/static/js/2.5c8d8268.chunk.js",
-    "static/js/2.5c8d8268.chunk.js.map": "/thef2e-challenge-1/static/js/2.5c8d8268.chunk.js.map",
+    "static/css/2.399c4c50.chunk.css": "/thef2e-challenge-1/static/css/2.399c4c50.chunk.css",
+    "static/js/2.a266640d.chunk.js": "/thef2e-challenge-1/static/js/2.a266640d.chunk.js",
+    "static/js/2.a266640d.chunk.js.map": "/thef2e-challenge-1/static/js/2.a266640d.chunk.js.map",
     "index.html": "/thef2e-challenge-1/index.html",
-    "precache-manifest.592ca1fc70b71be4d46dc1128eba0924.js": "/thef2e-challenge-1/precache-manifest.592ca1fc70b71be4d46dc1128eba0924.js",
+    "precache-manifest.b4d5d986321d67a23d87d7214e9d918e.js": "/thef2e-challenge-1/precache-manifest.b4d5d986321d67a23d87d7214e9d918e.js",
     "service-worker.js": "/thef2e-challenge-1/service-worker.js",
-    "static/css/2.dcc96cc3.chunk.css.map": "/thef2e-challenge-1/static/css/2.dcc96cc3.chunk.css.map",
+    "static/css/2.399c4c50.chunk.css.map": "/thef2e-challenge-1/static/css/2.399c4c50.chunk.css.map",
     "static/css/main.34de6062.chunk.css.map": "/thef2e-challenge-1/static/css/main.34de6062.chunk.css.map",
     "static/media/material-icons.css": "/thef2e-challenge-1/static/media/MaterialIcons-Regular.d120c85b.ttf"
   }

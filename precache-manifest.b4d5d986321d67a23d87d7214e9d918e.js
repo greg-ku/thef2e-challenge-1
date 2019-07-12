@@ -1,23 +1,23 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "b296cba5408772f3f4296372129676f1",
+    "revision": "4114731e9b9a83328619eefeeae1284b",
     "url": "/thef2e-challenge-1/index.html"
   },
   {
-    "revision": "75c247ce84a1a201b14b",
-    "url": "/thef2e-challenge-1/static/css/2.dcc96cc3.chunk.css"
+    "revision": "b885550cfccee86e36e4",
+    "url": "/thef2e-challenge-1/static/css/2.399c4c50.chunk.css"
   },
   {
-    "revision": "63f36483e9d0e4ae6ca9",
+    "revision": "40338b9c227f6a8a95d4",
     "url": "/thef2e-challenge-1/static/css/main.34de6062.chunk.css"
   },
   {
-    "revision": "75c247ce84a1a201b14b",
-    "url": "/thef2e-challenge-1/static/js/2.5c8d8268.chunk.js"
+    "revision": "b885550cfccee86e36e4",
+    "url": "/thef2e-challenge-1/static/js/2.a266640d.chunk.js"
   },
   {
-    "revision": "63f36483e9d0e4ae6ca9",
-    "url": "/thef2e-challenge-1/static/js/main.52e3276e.chunk.js"
+    "revision": "40338b9c227f6a8a95d4",
+    "url": "/thef2e-challenge-1/static/js/main.8c5c3011.chunk.js"
   },
   {
     "revision": "23f86d3e5ce9e9dcd01a",
